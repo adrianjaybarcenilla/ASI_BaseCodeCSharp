@@ -23,6 +23,18 @@ namespace Basecode.Main.Controllers
             return View();
         }
 
+        public IActionResult JobsList(){
+            return View();
+        }
+
+        public IActionResult HRScheduler(){
+            return View();
+        }
+
+        public IActionResult ASchedule(){
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
