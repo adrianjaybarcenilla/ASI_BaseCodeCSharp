@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Basecode.Main.Models
 {
+    [AllowAnonymous]
     public class UserAuthModel:PageModel
     {
         public bool IsUserAuthenticated { get; set; }
