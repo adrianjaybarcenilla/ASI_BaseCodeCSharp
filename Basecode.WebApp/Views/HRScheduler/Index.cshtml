@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "HR Scheduler";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>This will display the Scheduler / Appointment Setter for HR</p>
+
+<div class="scheduler-container">
+    <div class="filter-container">
+        <select class="job-title-menu">
+            <option disabled selected>Job Title</option>
+            <option>Network Administrator</option>
+            <option>Software Developer/Engineer</option>
+            <option>Data Scientist</option>
+            <option>Information Security Analyst</option>
+            <option>IT Project Manager</option>
+            <option>Systems Administrator</option>
+            <option>UI/UX Designer</option>
+        </select>
+        <select class="department-menu">
+            <option disabled selected>Department</option>
+            <option>IT Department</option>
+            <option>Software Development Department</option>
+            <option>Data Department</option>
+            <option>Cybersecurity Department</option>
+            <option>Project Management Office</option>
+            <option>Operations Department</option>
+            <option>E-commerce Department</option>
+        </select>
+        <select class="phases-menu">
+            <option disabled selected>Phases</option>
+            <option>No Confirmation</option>
+            <option>HR Interview</option>
+            <option>Technical Exam</option>
+            <option>Technical Interview</option>
+            <option>Background Check</option>
+            <option>Final Interview</option>
+            <option>Rejected</option>
+        </select>
+        <input type="text" class="input-applicant" placeholder="Enter applicant name">
+        <button type="button" class="search-applicant-btn">Search applicant</button>
+    </div>
+    <div class="applicant-container">
+        <h1>Applicants</h1>
+        <div class="applicant-details">
+            <div class="column">
+                <h2>Queen Riza Montayre</h2>
+                <div class="applicant-email"><b>Email:</b> queenriza.montayre@gmail.com</div>
+                <div class="applicant-address"><b>Address:</b> Cebu City, Philippines</div>
+                <div class="applicant-mobile"><b>Phone number:</b> +63 912 345 6789</div>
+            </div>
+            <div class="column">
+                <div class="applicant-start-date"><b>Start date:</b> July 12, 2023</div>
+            </div>
+        </div>
+        <div class="applicant-details">
+            <div class="column">
+                <h2>Taylor Alison Swift</h2>
+                <div class="applicant-email"><b>Email:</b> tayloralison.swift@gmail.com</div>
+                <div class="applicant-address"><b>Address:</b> Mandaue City, Philippines</div>
+                <div class="applicant-mobile"><b>Phone number:</b> +63 998 765 4321</div>
+            </div>
+            <div class="column">
+                <div class="applicant-start-date"><b>Start date:</b> July 19, 2023</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #D9D9D9;
+    }
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        padding-top: 20px;
+    }
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        padding-left: 25px;
+    }
+
+    .filter-container {
+        background-color: white;
+        width: 100%;
+        height: 130px;
+    }
+
+    .applicant-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 50px 0px 50px;
+    }
+
+    .applicant-details {
+        display: flex;
+        background-color: #F1F1F1;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .applicant-email, .applicant-address, .applicant-mobile {
+        font-family: 'Roboto', sans-serif;
+        padding-top: 15px;
+        padding-left: 25px;
+    }
+
+    .applicant-start-date {
+        font-family: 'Roboto', sans-serif;
+        padding-top: 75px;
+    }
+
+    .applicant-job-title {
+        width: 110px;
+        height: 25px;
+        background-color: white;
+    }
+
+    .column {
+        font-family: 'Roboto', sans-serif;
+        flex: 1;
+    }
+
+    .job-title-menu, .department-menu, .phases-menu {
+        width: 270px;
+        height: 50px;
+        /* border: none; */
+        margin-top: 40px;
+        margin-left: 40px;
+        padding: 10px;
+    }
+
+    .input-applicant {
+        width: 270px;
+        height: 25px;
+        margin-top: 40px;
+        margin-left: 40px;
+        padding: 10px;
+    }
+
+    .search-applicant-btn {
+        width: 150px;
+        height: 35px;
+        background-color: #FF0000;
+        color: white;
+        margin-left: 40px;
+        border: none;
+        border-radius: 20px;
+    }
+</style>
