@@ -35,6 +35,11 @@ namespace Basecode.Main.Controllers
             return View();
         }
 
+        public IActionResult ApplicationForm()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
