@@ -63,7 +63,9 @@
                                         <span>8 hour shift</span>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-apply-now mt-2" asp-controller="ApplicationForm" asp-action="ApplicationPage">Apply Now!</button>
+                                <a asp-area="" asp-controller="ApplicationForm" asp-action="Index">
+                                    <button type="button" class="btn btn-danger btn-apply-now mt-2">Apply Now!</button>
+                                </a>
                             </div>
                         </div>
                         <div class="card">
@@ -83,7 +85,7 @@
                                         <span>8 hour shift</span>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-apply-now mt-2" asp-controller="ApplicationForm" asp-action="ApplicationPage">Apply Now!</button>
+                                <button type="button" class="btn btn-danger btn-apply-now mt-2" asp-controller="ApplicationForm" asp-action="Index">Apply Now!</button>
                             </div>
                         </div>
                         <div class="card">
@@ -113,7 +115,7 @@
                                         <span>Multiple Candidates</span>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-danger btn-apply-now mt-2"asp-controller="ApplicationForm" asp-action="ApplicationPage">Apply Now!</button>
+                                <button type="button" class="btn btn-danger btn-apply-now mt-2"asp-controller="ApplicationForm" asp-action="Index">Apply Now!</button>
                             </div>
                         </div>
                     </div>
@@ -130,9 +132,11 @@
                     <div class="vstack" style="align-items: center;">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">#</span>
-                            <input type="text" class="form-control" placeholder="Tracker ID" aria-label="tracker_id" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control" placeholder="Enter Tracker ID here" aria-label="tracker_id" aria-describedby="basic-addon1">
                         </div>
-                        <button type="button" class="btn btn-danger btn-apply-now" asp-controller="Home" asp-action="JobsList">Check Status!</button>
+                        <form method="get" asp-controller="Home" asp-action="JobsList">
+                            <button type="submit" class="btn btn-danger btn-apply-now" >Check Status!</button>
+                        </form>
                     </div>
                     <div class="card mt-5">
                         <div class="card-body" style="background-color: hsla(0, 0%, 0%, 0.1);">
