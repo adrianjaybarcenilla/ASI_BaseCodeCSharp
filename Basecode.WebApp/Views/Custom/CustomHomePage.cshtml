@@ -9,7 +9,11 @@
 	<title>CustomHomePage</title>
 	<link rel="stylesheet" href="~/css/StyleSheet1.css">
 </head>
-
+@*
+	<li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </li>
+*@
 <body>
 	<header>
 		<div class="wrapper">
@@ -17,10 +21,14 @@
 				<img class="logo" src="~/Alliance Logo.png" width="298" height="80" alt="" />
 				<ul>
 					<li>
-						<a href="#" class="button dark">Home</a>
+						<div class="button dark">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+						</div>
 					</li>
 					<li>
-						<a href="#" class="button dark">Sessions</a>
+						<div class="button dark">
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+						</div>
 					</li>
 				</ul>
 			</nav>
