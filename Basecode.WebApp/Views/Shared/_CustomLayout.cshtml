@@ -20,14 +20,9 @@
     <link rel="stylesheet" href="~/Basecode.Main.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <partial name="_CustomNavbar"/>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <partial name="_CustomNavbar"/>
+
+    @RenderBody()
 
     <footer class="border-top footer text-muted text-center">
         <div class="container">
