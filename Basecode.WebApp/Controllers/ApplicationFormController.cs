@@ -13,7 +13,7 @@ namespace Basecode.WebApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult ApplicationPage()
+        public IActionResult Index()
         {
             return View();
         }
