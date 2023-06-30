@@ -1,70 +1,149 @@
 @{
     ViewData["Title"] = "Jobs List";
 }
-<h1>@ViewData["Title"]</h1>
+<h1 style="margin-top: 20px">@ViewData["Title"]</h1>
+<p>This will view the Jobs Listing</p>
 
-<link rel="stylesheet" href="./JobsList.css" />
-
-<div style="display: grid;
-            gap: 20px;
-            grid-auto-flow: column;
-            height: 500px;">
-  <div style="display: grid;
-              grid-auto-flow: row;
-              gap: 10px;
-              width: 1000px;
-              height: 100px;">
+<div class="main">
+  <div class="content">
     <div class="input-group" style="width: 100%; height: 10%;">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <button type="button" class="btn btn-outline-primary">search</button>
+      <input type="search" class="form-control rounded" placeholder="Search for Careers" aria-label="Search" aria-describedby="search-addon" />
+      <button type="button" class="btn btn-danger">Search</button>
     </div>
-    <ul class="joblist" style="overflow: hidden;
-                               overflow-y: scroll;
-                               list-style-type: none;
-                               height: 450px;
-                               padding-left: 0px;
-                               -ms-overflow-style: none;
-                               scrollbar-width: none;">
+    <ul class="joblist">
       <li>
-        
-        <div style="width: 100%;
-                    height: 200px;
-                    border: 1px solid black;
-                    border-radius: 3px;
-                    padding: 10px;
-                    margin-bottom: 10px;">
+        <div class="joblist-item">
           <h3>Job Sample</h3>
+          <p>Sample Department</p>
           <button type="button" class="btn btn-danger">Apply</button>
         </div>
-        <div style="width: 100%;
-                    height: 200px;
-                    border: 1px solid black;
-                    border-radius: 3px;
-                    padding: 10px;
-                    margin-bottom: 10px;">
+      </li>
+      <li>
+        <div class="joblist-item">
           <h3>Job Sample 2</h3>
+          <p>Sample Department</p>
           <button type="button" class="btn btn-danger">Apply</button>
         </div>
-        <div style="width: 100%;
-                    height: 200px;
-                    border: 1px solid black;
-                    border-radius: 3px;
-                    padding: 10px;
-                    margin-bottom: 10px;">
+      </li>
+      <li>
+        <div class="joblist-item">
           <h3>Job Sample 3</h3>
+          <p>Sample Department</p>
+          <button type="button" class="btn btn-danger">Apply</button>
+        </div>
+      </li>
+      <li>
+        <div class="joblist-item">
+          <h3>Job Sample 4</h3>
+          <p>Sample Department</p>
+          <button type="button" class="btn btn-danger">Apply</button>
+        </div>
+      </li>
+      <li>
+        <div class="joblist-item">
+          <h3>Job Sample 5</h3>
+          <p>Sample Department</p>
           <button type="button" class="btn btn-danger">Apply</button>
         </div>
       </li>
     </ul>
   </div>
   <div style="width: 300px; padding: 10px;">
-    <div style="width: 100%;
-                height: 100%;
-                border: 1px solid black;
-                border-radius: 3px;">
-
+    <div class="menu">
+      <div class="menu-section">
+        <h5>Filter By Department</h5>
+        <div class="form-check" style="margin-top: 10px;">
+          <input class="form-check-input" type="checkbox" value="">
+          <label class="form-check-label" for="flexCheckDefault">
+            Sample Department
+          </label>
+        </div>
+        <div class="form-check" style="margin-top: 10px;">
+          <input class="form-check-input" type="checkbox" value="">
+          <label class="form-check-label" for="flexCheckDefault">
+            Sample Department
+          </label>
+        </div>
+        <div class="form-check" style="margin-top: 10px;">
+          <input class="form-check-input" type="checkbox" value="">
+          <label class="form-check-label" for="flexCheckDefault">
+            Sample Department
+          </label>
+        </div>
+      </div>
+      <div class="menu-section">
+        <h5>Filter By Salary</h5>
+        <label for="customRange1" class="form-label">Minimum Salary</label>
+        <input type="range" class="form-range" style="margin-top: 20px;">
+      </div>
+      <div class="menu-section">
+        <h5>Sort By</h5>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            Sort
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Hours</a>
+            <a class="dropdown-item" href="#">Name</a>
+            <a class="dropdown-item" href="#">Department</a>
+          </div>
+        </div>
+      </div>
+      <div class="menu-section" style="margin-bottom: 0px;">
+        <h5>Quick Menu</h5>
+      </div>
     </div>
   </div>
 </div>
 
-<p>This will view the Jobs Listing</p>
+<style>
+  .joblist{
+    overflow: hidden;
+    overflow-y: scroll;
+    list-style-type: none;
+    height: 625px; padding-left: 0px;
+  }
+
+  .joblist::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+  }
+
+  .joblist-item{
+    width: 100%;
+    height: 225px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .main{
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    height: 700px;
+  }
+
+  .content{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px;
+    width: 1000px;
+    height: 100px;
+  }
+
+  .menu{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 3px;
+  }
+
+  .menu-section{
+    width: 100%;
+    height: 25%;
+    padding: 10px;
+    border-bottom: 1px solid rgb(180, 180, 180);
+  }
+</style>
