@@ -1,0 +1,18 @@
+@* @page
+@model Basecode.Main.Models.SearchResultsModel
+
+<h1>Search Results</h1>
+
+@if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+{
+    <ul>
+        @foreach (var result in Model.SearchResults)
+        {
+            <li>@result</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No results found.</p>
+} *@

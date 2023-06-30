@@ -1,0 +1,82 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar">
+    <div class="container">
+        <!-- Nav-Logo -->
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            <img id="logo-img"
+                    src="/img/asi-logo-white.svg"
+                    loading="lazy" />
+        </a>
+        <!-- Nav-Logo -->
+        <!-- Toggle Button -->
+        <button class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navButtonsRight"
+                aria-controls="navButtonsRight"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Toggle Button -->
+        <!-- Collapse Navbar Options -->
+        <div class="collapse navbar-collapse" id="navButtonsRight">
+            <ul class="navbar-nav ms-5 me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-href" asp-area="" asp-controller="Home" asp-action="JobsList">Job Openings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-href" asp-area="" asp-controller="HRScheduler" asp-action="Index">HR Scheduler</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <button type="button" class="btn btn-outline-primary btn-sm px-3 me-2 nav-link-button">
+                    Login
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-sm me-2 nav-link-button">
+                    Register
+                </button>
+            </div>
+        </div>
+        <!-- Collapse Navbar Options -->
+    </div>
+</nav>
+<div class="view"
+    style="background-image: url('img/working-with-us-bg-low-res.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <div class="mask d-flex justify-content-center align-items-center"
+            style="background-color: hsla(0, 0%, 0%, 0.5); height: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <h1 class="text-center text-white">Welcome to Alliance Software!</h1>
+                    <h4 class="text-center text-white">Find jobs with us! We excel in IT industry!</h4>
+                    <!-- <div class="form-outline form-white" id="searchFormOutline">
+                        <i class="fa-solid fa-magnifying-glass trailing"></i>
+                        <input type="text" id="searchFormControl" class="form-control form-control-lg" />
+                        <label class="form-label" for="searchFormControl">Search Job Openings</label>
+                    </div> -->
+                    <div class="input-group mb-3" id="searchFormOutline">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass trailing"></i></span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3"></div>
+                        <div class="d-grid col-3 mx-auto">
+                            <button class="btn btn-outline-primary home-search-btn" type="button">Search</button>
+                        </div>
+                        <div class="d-grid col-3 mx-auto">
+                            <button class="btn btn-outline-primary home-search-btn" type="button">Advance Search</button>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

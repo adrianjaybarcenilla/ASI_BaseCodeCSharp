@@ -1,0 +1,164 @@
+﻿/* Author: Albrecht Christian G. Lañojan */
+
+html, body, header, .view {
+    height: 100%;
+}
+
+.view {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+.nav-link-button {
+    color: #ffffff;
+    border-color: #EC2224 !important;
+    width: 7.5rem;
+}
+
+.nav-link-button:hover {
+    color: #EC2224;
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+}
+
+.nav-link-button:active {
+    color: #EC2224 !important;
+    border-color: #ffffff !important;
+}
+
+.nav-link-href {
+    color: #ffffff !important;
+}
+
+.nav-link-href:hover {
+    color: #EC2224 !important;
+}
+
+#searchFormOutline > i {
+    color: white;
+}
+
+#searchFormOutline > input {
+    background-color: rgb(0 0 0 / 50%);
+    border-left-color: transparent;
+}
+
+#searchFormOutline > span {
+    background-color: rgb(0 0 0 / 50%);
+    border-right-color: transparent;
+}
+
+.home-search-btn {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #EC2224 !important;
+    transition: background-color 0.5s !important;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.home-search-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EC2224;
+    transition: width 0.5s !important;
+    z-index: -1;
+}
+
+.home-search-btn:hover {
+    color: #ffffff;
+    border-color: #EC2224 !important;
+    background-color: #EC2224 !important;
+}
+
+    .home-search-btn:hover::before {
+        width: 100%;
+    }
+
+.home-search-btn:active {
+    color: #ffffff !important;
+    background-color: #EC2224 !important;
+}
+
+@media (min-width: 600px) {
+    .navbar .dropdown-menu form {
+        width: 22rem
+    }
+
+    .navbar.scrolling-navbar {
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -o-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        padding-top: 12px;
+        padding-bottom: 12px
+    }
+
+    .navbar.scrolling-navbar .navbar-nav > li {
+        -webkit-transition-duration: 1s;
+        -o-transition-duration: 1s;
+        transition-duration: 1s
+    }
+
+    .navbar.scrolling-navbar.top-nav-collapse {
+        padding-top: 5px;
+        padding-bottom: 5px
+    }
+}
+
+.navbar.scrolling-navbar.top-nav-collapse {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.top-nav-collapse {
+    background-color: #ffffff;
+}
+
+.top-nav-collapse .nav-link-href {
+    color: #EC2224 !important;
+}
+
+.top-nav-collapse .nav-link-href:hover {
+    color: #EC2224 !important;
+}
+
+.top-nav-collapse .nav-link-button {
+    color: #EC2224 !important;
+}
+
+.top-nav-collapse .nav-link-button:hover {
+    color: #ffffff !important;
+    background-color: #EC2224 !important;
+    border-color: #EC2224 !important;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #404040;
+    /* cursor: pointer; */
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    word-wrap: break-word;
+    box-shadow: none;
+    text-transform: none;
+}
+
+.btn-apply-now {
+    background-color: #EC2224;
+}
+
+.chip-important {
+    color: #EC2224;
+}
