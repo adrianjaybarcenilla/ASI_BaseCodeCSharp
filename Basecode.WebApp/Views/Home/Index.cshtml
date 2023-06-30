@@ -1,8 +1,108 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_CustomLayout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section style="height: 100%; padding-top: 2rem;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-center">Top Viewed Job Openings</h3>
+                <div class="vstack gap-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">IT Sales Associate</h4>
+                            <div class="hstack gap-2">
+                                <div class="chip">
+                                    <i class="fa-solid fa-money-bills me-2"></i>
+                                    <span>Php 30,000 a month</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-briefcase me-2"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    <span>8 hour shift</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-apply-now mt-2">Apply Now!</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">IT Sales Associate</h4>
+                            <div class="hstack gap-2">
+                                <div class="chip">
+                                    <i class="fa-solid fa-money-bills me-2"></i>
+                                    <span>Php 30,000 a month</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-briefcase me-2"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    <span>8 hour shift</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-apply-now mt-2">Apply Now!</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">IT Sales Associate</h4>
+                            <div class="hstack gap-2">
+                                <div class="chip">
+                                    <i class="fa-solid fa-money-bills me-2"></i>
+                                    <span>Php 30,000 a month</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-briefcase me-2"></i>
+                                    <span>Full-time</span>
+                                </div>
+                                <div class="chip">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    <span>8 hour shift</span>
+                                </div>
+                            </div>
+                            <div class="hstack gap-2">
+                                <div class="chip chip-important">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    <span>Urgently Hiring</span>
+                                </div>
+                                <div class="chip chip-important">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                    <span>Multiple Candidates</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-apply-now mt-2">Apply Now!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="vr" style="height: 100%; background-color:black"></div>
+            </div>
+            <div class="col-md-5">
+                <h3 class="text-center mt-md-5 pt-md-5">Already Applied?<br>Check your status here!</h3>
+                <!-- <div class="form-outline">
+                    <input type="text" id="form12" class="form-control" />
+                    <label class="form-label" for="form12">Example label</label>
+                </div> -->
+                <div class="vstack" style="align-items: center;">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">#</span>
+                        <input type="text" class="form-control" placeholder="Tracker ID" aria-label="tracker_id" aria-describedby="basic-addon1">
+                    </div>
+                    <button type="button" class="btn btn-danger btn-apply-now">Check Status!</button>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body" style="background-color: hsla(0, 0%, 0%, 0.1);">
+                        <h3 class="text-center my-5">View your result here!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
