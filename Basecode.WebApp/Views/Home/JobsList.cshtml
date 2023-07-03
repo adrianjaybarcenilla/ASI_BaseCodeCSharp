@@ -3,9 +3,6 @@
 }
 <div class="background-tint" style="padding: 50px; background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/industrial-style-office.jpg');">
 
-<h1 style="margin-top: 20px">@ViewData["Title"]</h1>
-<p>This will view the Jobs Listing</p>
-
 <div class="main">
   <div class="content">
     <div class="input-group" style="width: 100%; height: 10%;">
@@ -78,6 +75,58 @@
   <div style="width: 300px; padding: 10px;">
     <div class="menu">
       <div class="menu-section">
+        <h5>Create Job Opening</h5>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="margin-top: 25px;">
+          Create Job Opening
+        </button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Create Job Opening</h5>
+                <button type="button" class="close" style="border: 0px; background-color: white;" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="job-title" class="col-form-label">Job Title:</label>
+                  <input type="text" class="form-control" id="job-title">
+                </div>
+                <div class="form-group">
+                  <label for="job-department" class="col-form-label">Department:</label>
+                  <input type="text" class="form-control" id="job-department">
+                </div>
+                <div class="form-group">
+                  <label for="experience-level" class="col-form-label">Experience Level:</label>
+                  <input type="text" class="form-control" id="experience-level">
+                </div>
+                <div class="form-group">
+                  <label for="job-requirements" class="col-form-label">Requirements:</label>
+                  <textarea class="form-control" id="job-requirements"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="vacant-slots" class="col-form-label">Vacancy:</label>
+                  <input type="text" class="form-control" id="vacant-slots">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Create</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-section" style="margin-bottom: 0px;">
+        <h5>Quick Menu</h5>
+        <div style="display: flex; flex-direction: column;">
+          <a href="#" style="color: rgb(195, 55, 34);">Register CV and Resume</a>
+          <a href="#" style="color: rgb(195, 55, 34);">Company Information</a>
+          <a href="#" style="color: rgb(195, 55, 34);">Contact Us</a>
+        </div>
+      </div>
+      <div class="menu-section">
         <h5>Filter By Department</h5>
         <div class="form-check" style="margin-top: 10px;">
           <input class="form-check-input" type="checkbox" value="">
@@ -99,29 +148,16 @@
         </div>
       </div>
       <div class="menu-section">
-        <h5>Filter By Salary</h5>
-        <label for="customRange1" class="form-label">Minimum Salary</label>
-        <input type="range" class="form-range" style="margin-top: 20px;">
-      </div>
-      <div class="menu-section">
         <h5>Sort By</h5>
         <div class="btn-group">
-          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 25px;">
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 25px;">
             Sort
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Hours</a>
-            <a class="dropdown-item" href="#">Name</a>
-            <a class="dropdown-item" href="#">Department</a>
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </div>
-      </div>
-      <div class="menu-section" style="margin-bottom: 0px;">
-        <h5>Quick Menu</h5>
-        <div style="display: flex; flex-direction: column;">
-          <a href="#" style="color: rgb(195, 55, 34);">Register CV and Resume</a>
-          <a href="#" style="color: rgb(195, 55, 34);">Company Information</a>
-          <a href="#" style="color: rgb(195, 55, 34);">Contact Us</a>
         </div>
       </div>
     </div>
@@ -159,6 +195,7 @@
     gap: 20px;
     grid-auto-flow: column;
     height: 700px;
+    margin-top: 40px;
   }
 
   .background-tint {
@@ -176,7 +213,7 @@
 
   .menu{
     width: 100%;
-    height: 100%;
+    height: 95%;
     border: 1px solid rgb(180, 180, 180);
     background-color: white;
     border-radius: 3px;
