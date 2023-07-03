@@ -20,7 +20,7 @@ namespace Basecode.WebApp
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
-
+            services.AddScoped<IJobOpeningRepository, JobOpeningRepository>();
         }
     }
 }
