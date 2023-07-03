@@ -5,6 +5,11 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<div class="catchphrase">
+    <p class="alliance">Alliance</p>
+    <p class="work">Work with us.</p>
+</div>
+
 <div class="wrapper">
     <span class="icon-close">
         <ion-icon name="close"></ion-icon>
@@ -27,7 +32,7 @@
                 <label><input type="checkbox">Remember Me</label>
                 <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="login-register-btn">Login</button>
             <div class="login-register">
                 <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
             </div>
@@ -43,6 +48,29 @@
         font-family: Arial, sans-serif;
     }
 
+    .catchphrase .alliance {
+        color: white;
+        font-weight: 800;
+        font-size: 8em;
+        position: absolute;
+        margin-left: 220px;
+        margin-top: 280px;
+    }
+
+    .catchphrase p::first-letter {
+        color: #FF0000;
+    }
+
+    .catchphrase .work {
+        color: white;
+        font-weight: 700;
+        font-size: 6em;
+        position: absolute;
+        margin-left: 220px;
+        margin-top: 470px;
+        border-top: 3px solid white;
+    }
+
     h1 {
         font-weight: 600;
     }
@@ -51,11 +79,11 @@
         position: relative;
         display: flex;
         justify-content: center;
-        align-item: center;
+        align-items: center;
         background-color: white;
         width: 450px;
         height: 550px;
-        margin: 170px;
+        margin: 220px;
         float: right;
         border-radius: 15px;
         overflow: hidden;
@@ -149,7 +177,7 @@
                 text-decoration: underline;
             }
 
-    .btn {
+    .login-register-btn {
         width: 100%;
         height: 45px;
         margin-top: 30px;
@@ -163,11 +191,11 @@
         font-weight: 500;
     }
 
-        .btn:hover {
+        .login-register-btn:hover {
             background: #CE3A3A;
         }
 
-        .btn:active {
+        .login-register-btn:active {
             background: #9F2020;
         }
 
