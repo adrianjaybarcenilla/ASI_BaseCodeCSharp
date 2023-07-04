@@ -1,10 +1,14 @@
 using Basecode.Data.Models;
 using Microsoft.AspNetCore.Mvc;
+using Basecode.Services.Interfaces;
+using Basecode.Data.Interfaces;
 
-namespace Basecode.WebApp.Controllers{
+namespace Basecode.WebApp.Controllers
+{
     public class JobOpeningController : Controller
     {
         private readonly IJobOpeningService _service;
+
         public JobOpeningController(IJobOpeningService service)
         {
             _service = service;
