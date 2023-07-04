@@ -22,9 +22,8 @@ namespace Basecode.Data
             RefreshToken.Add(token);
             SaveChanges();
         }
-
+        public virtual DbSet<JobOpening> JobOpening { get; set; }
         public virtual DbSet<User> User { get; set; }
-
         public virtual DbSet<RefreshToken> RefreshToken { get; set; }
     }
 }
