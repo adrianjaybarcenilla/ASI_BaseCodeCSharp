@@ -10,5 +10,9 @@ namespace Basecode.Data.Interfaces
     public interface IJobOpeningRepository
     {
         IQueryable<JobOpening> RetrieveAll();
+        void Add(JobOpening jobOpening);
+        JobOpening GetByID(int id);
+        void Update(JobOpening jobOpening);
+        void Delete(int id);
     }
 }

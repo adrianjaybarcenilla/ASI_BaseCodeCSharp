@@ -19,5 +19,28 @@ namespace Basecode.Data.Repositories
         {
             return this.GetDbSet<JobOpening>();
         }
+        public void Add(JobOpening jobOpening)
+        {
+            _context.JobOpening.Add(jobOpening);
+            _context.SaveChanges();
+        }
+        public JobOpening GetByID(int id)
+        {
+            return _context.JobOpening.Find(id);
+        }
+        public void Update(JobOpening jobOpening)
+        {
+            _context.JobOpening.Update(jobOpening);
+            _context.SaveChanges();
+        }
+        public void Delete(int id)
+        {
+            var data = _context.JobOpening.Find(id);
+            if(data != null)
+            {
+                _context.JobOpening.Remove(data);
+                _context.SaveChanges();
+            }
+        }
     }
 }
