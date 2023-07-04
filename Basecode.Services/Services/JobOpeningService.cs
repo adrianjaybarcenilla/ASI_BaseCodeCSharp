@@ -14,9 +14,9 @@ namespace Basecode.Services.Services{
 
         public void Add(JobOpening jobOpening)
         {
-            jobOpening.CreatedBy = System.Environment.MachineName;
+            jobOpening.CreatedBy = System.Environment.UserName;
             jobOpening.CreatedTime = DateTime.Now;
-            jobOpening.UpdatedBy = System.Environment.MachineName;
+            jobOpening.UpdatedBy = System.Environment.UserName;
             jobOpening.UpdatedTime = DateTime.Now;
         
             _repository.Add(jobOpening);
