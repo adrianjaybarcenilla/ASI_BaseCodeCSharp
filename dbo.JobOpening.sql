@@ -11,13 +11,11 @@ GO
 CREATE TABLE [dbo].[JobOpening] (
     [Id]              INT            IDENTITY (1, 1) NOT NULL,
     [Title]           NVARCHAR (100) NOT NULL,
-    [DateOfPosting]   DATE           NULL,
+    [Description]     NVARCHAR (MAX) NULL,
     [EmploymentType]  NVARCHAR (50)  NOT NULL,
-    [JobDescription]  NVARCHAR (MAX) NULL,
-    [RequiredSkills]  NVARCHAR (MAX) NOT NULL,
-    [PreferredSkills] NVARCHAR (MAX) NULL,
-    [PostedBy]        NVARCHAR (100) NULL,
-    [PostedTime]      DATETIME       NULL
+    [ExperienceLevel] NVARCHAR (MAX) NOT NULL,
+    [CreatedTime]     DATETIME       NULL,
+    [CreatedBy]       NVARCHAR (100) NULL,
+    [UpdatedTime]     DATETIME       NULL,
+    [UpdatedBy]       NVARCHAR (100) NULL
 );
-
-
