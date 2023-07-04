@@ -7,7 +7,7 @@ namespace Basecode.WebApp.Controllers
 {
     public class JobOpeningController : Controller
     {
-        private readonly JobOpeningService _service;
+        private readonly IJobOpeningService _service;
 
         public JobOpeningController(IJobOpeningService service)
         {

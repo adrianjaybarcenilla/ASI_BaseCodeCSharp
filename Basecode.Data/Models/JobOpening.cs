@@ -7,9 +7,9 @@ namespace Basecode.Data.Models
         public string? Description { get; set; }
         public string EmploymentType { get; set; }
         public string ExperienceLevel   { get; set; }
-        public DateTime CreatedTime { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime UpdatedTime { get; set; }
-        public string UpdatedBy { get; set; }
+        public DateTime? CreatedTime { get; set; }
+        public string? CreatedBy { get; set; }
+        public DateTime? UpdatedTime { get; set; }
+        public string? UpdatedBy { get; set; }
     }
 }
