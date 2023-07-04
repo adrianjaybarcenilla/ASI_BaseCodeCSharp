@@ -13,66 +13,22 @@
       <button type="button" class="btn btn-danger">Search</button>
     </div>
     <ul class="joblist">
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 2</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 3</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 4</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 5</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
+                @foreach(var jobOpening in Model)
+                {
+                    <li>
+                        <div class="joblist-item">
+                            <h3>@jobOpening.Title</h3>
+                            <p>@jobOpening.EmploymentType</p>
+                            <p>
+                                @jobOpening.Description
+                            </p>
+                            <button type="button" class="btn btn-danger">Apply</button>
+                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-info">Update</a>
+                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </li>
+                }
+                
     </ul>
   </div>
   <div style="width: 300px; padding: 10px;">
