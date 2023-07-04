@@ -1,13 +1,13 @@
 using Basecode.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Basecode.Services.Interfaces;
-using Basecode.Data.Interfaces;
+using Basecode.Services.Services;
 
 namespace Basecode.WebApp.Controllers
 {
     public class JobOpeningController : Controller
     {
-        private readonly IJobOpeningService _service;
+        private readonly JobOpeningService _service;
 
         public JobOpeningController(IJobOpeningService service)
         {
@@ -21,7 +21,7 @@ namespace Basecode.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddJobOpeningView(JobOpening jobOpening)
+        public IActionResult Add(JobOpening jobOpening)
         {
             _service.Add(jobOpening);
             return RedirectToAction("Index");

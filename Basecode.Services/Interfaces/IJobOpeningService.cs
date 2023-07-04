@@ -1,8 +1,8 @@
 using Basecode.Data.Models;
 
-namespace Basecode.Data.Interfaces{
+namespace Basecode.Services.Interfaces{
     public interface IJobOpeningService{
-        List<JobOpening> RetreiveAll();
+        List<JobOpening> RetrieveAll();
         void Add(JobOpening jobOpening);
     }
 }

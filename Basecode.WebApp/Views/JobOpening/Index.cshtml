@@ -89,31 +89,34 @@
                 </button>
               </div>
               <div class="modal-body">
-                <div class="form-group">
-                  <label for="job-title" class="col-form-label">Job Title:</label>
-                  <input type="text" class="form-control" id="job-title">
-                </div>
-                <div class="form-group">
-                  <label for="job-department" class="col-form-label">Department:</label>
-                  <input type="text" class="form-control" id="job-department">
-                </div>
-                <div class="form-group">
-                  <label for="experience-level" class="col-form-label">Experience Level:</label>
-                  <input type="text" class="form-control" id="experience-level">
-                </div>
-                <div class="form-group">
-                  <label for="job-requirements" class="col-form-label">Requirements:</label>
-                  <textarea class="form-control" id="job-requirements"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="vacant-slots" class="col-form-label">Vacancy:</label>
-                  <input type="text" class="form-control" id="vacant-slots">
-                </div>
+                <form asp-action="Add">
+                  <div class="form-group">
+                    <label for="job-title" class="col-form-label">Job Title:</label>
+                    <input type="text" class="form-control" id="job-title">
+                  </div>
+                  <div class="form-group">
+                    <label for="job-department" class="col-form-label">Department:</label>
+                    <input type="text" class="form-control" id="job-department">
+                  </div>
+                  <div class="form-group">
+                    <label for="experience-level" class="col-form-label">Experience Level:</label>
+                    <input type="text" class="form-control" id="experience-level">
+                  </div>
+                  <div class="form-group">
+                    <label for="job-requirements" class="col-form-label">Requirements:</label>
+                    <textarea class="form-control" id="job-requirements"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="vacant-slots" class="col-form-label">Vacancy:</label>
+                    <input type="text" class="form-control" id="vacant-slots">
+                  </div>
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger">Create</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
+              
             </div>
           </div>
         </div>

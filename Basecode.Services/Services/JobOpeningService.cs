@@ -14,10 +14,15 @@ namespace Basecode.Services.Services{
 
         public void Add(JobOpening jobOpening)
         {
-                
+            jobOpening.CreatedBy = System.Environment.MachineName;
+            jobOpening.CreatedTime = DateTime.Now;
+            jobOpening.UpdatedBy = System.Environment.MachineName;
+            jobOpening.UpdatedTime = DateTime.Now;
+        
+            _repository.Add(jobOpening);
         }
 
-        public List<JobOpening> RetreiveAll()
+        public List<JobOpening> RetrieveAll()
         {
             return _repository.RetrieveAll().ToList();
         }
