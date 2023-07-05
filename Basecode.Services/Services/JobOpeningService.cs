@@ -2,9 +2,10 @@ using Basecode.Data.Interfaces;
 using Basecode.Services.Interfaces;
 using Basecode.Data.Repositories;
 using Basecode.Data.Models;
+using Basecode.Data.ViewModels;
 
 namespace Basecode.Services.Services{
-    public class JobOpeningService : IJobOpeningService
+    public class JobOpeningService : JobOpeningErrorHandler, IJobOpeningService
     {
         private readonly IJobOpeningRepository _repository;
         public JobOpeningService(IJobOpeningRepository repository)
@@ -25,6 +26,20 @@ namespace Basecode.Services.Services{
         public List<JobOpening> RetrieveAll()
         {
             return _repository.RetrieveAll().ToList();
+        }
+
+        public LogContent CheckValidTitle(JobOpeningViewModel jobOpeningViewModel)
+        {
+            LogContent logContent = new LogContent();
+
+            if (char.IsDigit(jobOpeningViewModel.Title[0]))
+            {
+                logContent.ErrorCode = "Invalid Title.";
+                logContent.Message = "Title starts with a number.";
+                logContent.Result = true;
+            }
+
+            return logContent;
         }
     }
 }

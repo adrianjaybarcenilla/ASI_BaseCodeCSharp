@@ -24,6 +24,11 @@ namespace Basecode.WebApp.Controllers
         [HttpPost]
         public IActionResult Add(JobOpeningViewModel jobOpeningViewModel)
         {
+            var data = _service.CheckValidTitle(jobOpeningViewModel);
+            if (data.Result)
+            {
+
+            }
             JobOpening jobOpening = new JobOpening();
             jobOpening.Title = jobOpeningViewModel.Title;
             jobOpening.Description = jobOpeningViewModel.Description;
