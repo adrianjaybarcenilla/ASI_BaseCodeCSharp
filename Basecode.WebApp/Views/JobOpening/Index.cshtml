@@ -1,4 +1,5 @@
 @using Basecode.Data.Models
+@using Basecode.Data.ViewModels;
 @model List<JobOpening>
 
 @{
@@ -39,7 +40,7 @@
           Create Job Opening
         </button>
 
-        @Html.Partial("_JobAdd", new JobOpening())
+        @Html.Partial("_JobAdd", new JobOpeningViewModel())
       
       </div>
       <div class="menu-section" style="margin-bottom: 0px;">
@@ -151,3 +152,9 @@
     border-bottom: 1px solid rgb(215, 215, 215);
   }
 </style>
+
+    @section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -2,6 +2,7 @@ using Basecode.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Basecode.Services.Interfaces;
 using Basecode.Services.Services;
+using Basecode.Data.ViewModels;
 
 namespace Basecode.WebApp.Controllers
 {
@@ -21,8 +22,13 @@ namespace Basecode.WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(JobOpening jobOpening)
+        public IActionResult Add(JobOpeningViewModel jobOpeningViewModel)
         {
+            JobOpening jobOpening = new JobOpening();
+            jobOpening.Title = jobOpeningViewModel.Title;
+            jobOpening.Description = jobOpeningViewModel.Description;
+            jobOpening.ExperienceLevel = jobOpeningViewModel.ExperienceLevel;
+            jobOpening.EmploymentType = jobOpeningViewModel.EmploymentType;
             _service.Add(jobOpening);
             return RedirectToAction("Index");
         }
