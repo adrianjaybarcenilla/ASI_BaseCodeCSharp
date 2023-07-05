@@ -1,0 +1,226 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<div class="main">
+    <div class="catchphrase">
+        <p class="alliance">Alliance</p>
+        <p class="work">Work with us.</p>
+    </div>
+
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="login-form">
+            <h1>Join Alliance</h1>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-register-btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-image: url('https://virtualbackgrounds.site/wp-content/uploads/2020/08/industrial-style-office.jpg');
+        background-color: rgba(53, 53, 53, 0.75);
+        background-blend-mode: multiply;
+        font-family: Arial, sans-serif;
+    }
+
+    .catchphrase .alliance {
+        color: white;
+        font-weight: 800;
+        font-size: 8em;
+        position: absolute;
+        margin-left: 220px;
+        margin-top: 280px;
+    }
+
+    .catchphrase p::first-letter {
+        color: #FF0000;
+    }
+
+    .catchphrase .work {
+        color: white;
+        font-weight: 700;
+        font-size: 6em;
+        position: absolute;
+        margin-left: 220px;
+        margin-top: 470px;
+        border-top: 3px solid white;
+    }
+
+    h1 {
+        font-weight: 600;
+    }
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 450px;
+        height: 550px;
+        margin: 220px;
+        float: right;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+        .wrapper .login-form {
+            width: 100%;
+            padding: 50px;
+        }
+
+        .wrapper .icon-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45px;
+            height: 45px;
+            background: #EC5D5D;
+            font-size: 2em;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom-left-radius: 15px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .wrapper .icon-close:hover {
+            background: #CE3A3A;
+        }
+
+        .wrapper .icon-close:active {
+            background: #9F2020;
+        }
+
+    .login-form h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        border-bottom: 2px solid black;
+        margin: 30px 0;
+    }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            font-weight: 500;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .input-box input:focus ~ label, .input-box input:valid ~ label {
+            top: -5px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            font-weight: 600;
+            padding: 0 35px 0 5px;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            line-height: 57px;
+        }
+
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9em;
+        font-weight: 500;
+        margin: -15px 0 15px;
+    }
+
+        .remember-forgot label input {
+            margin-right: 3px;
+        }
+
+        .remember-forgot a {
+            text-decoration: none;
+        }
+
+            .remember-forgot a:hover {
+                text-decoration: underline;
+            }
+
+    .login-register-btn {
+        width: 100%;
+        height: 45px;
+        margin-top: 30px;
+        background: #EC5D5D;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1em;
+        color: white;
+        font-weight: 500;
+    }
+
+        .login-register-btn:hover {
+            background: #CE3A3A;
+        }
+
+        .login-register-btn:active {
+            background: #9F2020;
+        }
+
+    .login-register {
+        font-size: 0.9em;
+        text-align: center;
+        font-weight: 500;
+        margin: 25px 0 10px;
+    }
+
+        .login-register p a {
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+            .login-register p a:hover {
+                text-decoration: underline;
+            }
+</style>
