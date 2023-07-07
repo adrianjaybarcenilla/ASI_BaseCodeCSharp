@@ -13,7 +13,7 @@ namespace Basecode.Services.Services
             public string ErrorCode { get; set; } = "";
             public DateTime Time { get; set; }
             public string Message { get; set; } = "";
-            public bool Result { get; set; } = false;
+            public bool Result { get; set; } = true;
         }
 
         public static string SetLog(LogContent logContent)

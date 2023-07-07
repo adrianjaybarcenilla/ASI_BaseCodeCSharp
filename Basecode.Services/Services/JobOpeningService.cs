@@ -36,7 +36,7 @@ namespace Basecode.Services.Services{
             {
                 logContent.ErrorCode = "Invalid Title.";
                 logContent.Message = "Title starts with a number.";
-                logContent.Result = true;
+                logContent.Result = false;
             }
 
             return logContent;

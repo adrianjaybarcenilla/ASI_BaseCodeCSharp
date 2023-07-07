@@ -28,13 +28,13 @@ namespace Basecode.WebApp.Controllers
         {
             var data = _service.CheckValidTitle(jobOpeningViewModel);
             //if error detected (title starts with number)
-            if (data.Result)
+            if (!data.Result)
             {
                 //log the error
                 _logger.Error(JobOpeningErrorHandler.SetLog(data));
             }
             //success
-            if (!data.Result)
+            else
             {
                 //log the success
                 _logger.Trace("Job Added Successfully.");
