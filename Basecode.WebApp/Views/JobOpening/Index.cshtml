@@ -1,3 +1,7 @@
+@using Basecode.Data.Models
+@using Basecode.Data.ViewModels;
+@model List<JobOpening>
+
 @{
     ViewData["Title"] = "Job Opening";
 }
@@ -10,66 +14,22 @@
       <button type="button" class="btn btn-danger">Search</button>
     </div>
     <ul class="joblist">
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 2</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 3</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 4</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
-      <li>
-        <div class="joblist-item">
-          <h3>Job Sample 5</h3>
-          <p>Sample Department</p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.</p>
-          <button type="button" class="btn btn-danger">Apply</button>
-        </div>
-      </li>
+                @foreach(var jobOpening in Model)
+                {
+                    <li>
+                        <div class="joblist-item">
+                            <h3>@jobOpening.Title</h3>
+                            <p>@jobOpening.EmploymentType</p>
+                            <p>
+                                @jobOpening.Description
+                            </p>
+                            <button type="button" class="btn btn-danger">Apply</button>
+                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-info">Update</a>
+                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </li>
+                }
+                
     </ul>
   </div>
   <div style="width: 300px; padding: 10px;">
@@ -79,47 +39,9 @@
         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" style="margin-top: 25px;">
           Create Job Opening
         </button>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Create Job Opening</h5>
-                <button type="button" class="close" style="border: 0px; background-color: white;" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form asp-action="Add">
-                  <div class="form-group">
-                    <label for="job-title" class="col-form-label">Job Title:</label>
-                    <input type="text" class="form-control" id="job-title">
-                  </div>
-                  <div class="form-group">
-                    <label for="job-department" class="col-form-label">Department:</label>
-                    <input type="text" class="form-control" id="job-department">
-                  </div>
-                  <div class="form-group">
-                    <label for="experience-level" class="col-form-label">Experience Level:</label>
-                    <input type="text" class="form-control" id="experience-level">
-                  </div>
-                  <div class="form-group">
-                    <label for="job-requirements" class="col-form-label">Requirements:</label>
-                    <textarea class="form-control" id="job-requirements"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="vacant-slots" class="col-form-label">Vacancy:</label>
-                    <input type="text" class="form-control" id="vacant-slots">
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Create</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+
+        @Html.Partial("_JobAdd", new JobOpeningViewModel())
+      
       </div>
       <div class="menu-section" style="margin-bottom: 0px;">
         <h5>Quick Menu</h5>
@@ -230,3 +152,9 @@
     border-bottom: 1px solid rgb(215, 215, 215);
   }
 </style>
+
+    @section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
