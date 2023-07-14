@@ -24,7 +24,7 @@
                             @jobOpening.Description
                         </p>
                         <button type="button" class="btn btn-danger">Apply</button>
-                            <a class="btn btn-info" onclick="">Update</a>
+                            <a class="btn btn-info" asp-action="UpdateView" asp-route-id="@jobOpening.Id">Update</a>
                         <a class="btn btn-danger" onclick="ConfirmDelete(@jobOpening.Id)">Delete</a>
                     </div>
                 </li>

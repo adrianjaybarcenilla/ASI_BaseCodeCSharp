@@ -28,6 +28,11 @@ namespace Basecode.WebApp.Controllers
             var data = _service.GetByID(id);
             return View(data);
         }
+        public IActionResult UpdateView(int id)
+        {
+            var data = _service.GetByID(id);
+            return View(data);
+        }
         //--CRUD methods
         [HttpPost]
         public IActionResult Add(JobOpeningViewModel jobOpeningViewModel)
@@ -63,9 +68,11 @@ namespace Basecode.WebApp.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public void Update(JobOpening jobOpening)
+        public IActionResult Update(JobOpening jobOpening)
         {
             _service.Update(jobOpening);
+
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public JobOpening GetByID(int id)
