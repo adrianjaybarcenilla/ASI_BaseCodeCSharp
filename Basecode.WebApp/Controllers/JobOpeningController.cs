@@ -9,20 +9,26 @@ namespace Basecode.WebApp.Controllers
 {
     public class JobOpeningController : Controller
     {
+        //--attributes
         private readonly IJobOpeningService _service;
         private static Logger _logger = LogManager.GetCurrentClassLogger();
-
+        //--constructors
         public JobOpeningController(IJobOpeningService service)
         {
             _service = service;
         }
-
+        //--page redirect methods
         public IActionResult Index()
         {
             var data = _service.RetrieveAll();
             return View(data);
         }
-
+        public IActionResult DeleteView(int id)
+        {
+            var data = _service.GetByID(id);
+            return View(data);
+        }
+        //--CRUD methods
         [HttpPost]
         public IActionResult Add(JobOpeningViewModel jobOpeningViewModel)
         {
@@ -48,6 +54,28 @@ namespace Basecode.WebApp.Controllers
             }
             
             return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _service.Delete(id);
+
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public void Update(JobOpening jobOpening)
+        {
+            _service.Update(jobOpening);
+        }
+        [HttpGet]
+        public JobOpening GetByID(int id)
+        {
+            return _service.GetByID(id);
+        }
+        public JsonResult GetByIDJson(int id)
+        {
+            JobOpening jobOpening = GetByID(id);
+            return Json(jobOpening);
         }
     }
 }

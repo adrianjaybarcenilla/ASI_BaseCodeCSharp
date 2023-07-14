@@ -13,25 +13,46 @@
       <input type="search" class="form-control rounded" placeholder="Search for Careers" aria-label="Search" aria-describedby="search-addon" />
       <button type="button" class="btn btn-danger">Search</button>
     </div>
-    <ul class="joblist">
-                @foreach(var jobOpening in Model)
-                {
-                    <li>
-                        <div class="joblist-item">
-                            <h3>@jobOpening.Title</h3>
-                            <p>@jobOpening.EmploymentType</p>
-                            <p>
-                                @jobOpening.Description
-                            </p>
-                            <button type="button" class="btn btn-danger">Apply</button>
-                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-info">Update</a>
-                            <a asp-action="" asp-route-id="@jobOpening.Id" class="btn btn-danger">Delete</a>
-                        </div>
-                    </li>
-                }
-                
-    </ul>
-  </div>
+        <ul class="joblist">
+            @foreach(var jobOpening in Model)
+            {
+                <li>
+                    <div class="joblist-item">
+                        <h3>@jobOpening.Title</h3>
+                        <p>@jobOpening.EmploymentType</p>
+                        <p>
+                            @jobOpening.Description
+                        </p>
+                        <button type="button" class="btn btn-danger">Apply</button>
+                            <a class="btn btn-info" onclick="">Update</a>
+                        <a class="btn btn-danger" onclick="ConfirmDelete(@jobOpening.Id)">Delete</a>
+                    </div>
+                </li>
+            } 
+        </ul>
+
+<!--Delete Modal-->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Delete Job Opening</h5>
+                <button type="button" class="close" style="border: 0px; background-color: white;" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Job Opening?
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" onclick="HideModal()">Cancel</a>
+                <a href="#" class="btn btn-success" onclick="Delete()">Confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
   <div style="width: 300px; padding: 10px;">
     <div class="menu">
       <div class="menu-section">
@@ -152,9 +173,36 @@
     border-bottom: 1px solid rgb(215, 215, 215);
   }
 </style>
+<!--Hidden elements for temp data-->
+<input type="hidden" id="hiddenJobOpeningId" />
 
-    @section Scripts{
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    }
+@section Scripts{
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<script>
+    $(document).ready(function () {
+        
+    })
+        var HideModal = function () {
+            $("#DeleteModal").modal('hide');
+        }
+        var ConfirmDelete = function (jobOpeningId) {
+            $("#hiddenJobOpeningId").val(jobOpeningId);
+            $("#DeleteModal").modal('show');
+        }
+        var Delete = function () {
+            var jobOpeningId = $("#hiddenJobOpeningId").val();
+            $.ajax({
+                type: "POST",
+                url: "/JobOpening/Delete",
+                data: { id: jobOpeningId },
+                success: function (result) {
+                    $("#DeleteModal").modal("hide");
+                    $("#hiddenJobOpeningId").val(null);
+                    location.reload();
+                }
+            });
+        }
+</script>
+}

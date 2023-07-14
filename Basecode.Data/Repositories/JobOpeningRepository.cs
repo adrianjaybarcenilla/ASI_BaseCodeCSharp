@@ -10,11 +10,14 @@ namespace Basecode.Data.Repositories
 {
     public class JobOpeningRepository : BaseRepository, IJobOpeningRepository
     {
+        //attributes
         private readonly BasecodeContext _context;
+        //constructors
         public JobOpeningRepository(IUnitOfWork unitOfWork, BasecodeContext context) : base(unitOfWork)
         {
             _context = context;
         }
+        //CRUD methods
         public IQueryable<JobOpening> RetrieveAll()
         {
             return this.GetDbSet<JobOpening>();
