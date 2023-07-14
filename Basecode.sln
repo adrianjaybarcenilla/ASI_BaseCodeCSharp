@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basecode.Services", "Baseco
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basecode.WebApp", "Basecode.WebApp\Basecode.WebApp.csproj", "{C06265AD-1179-4945-85CF-28AADA137AA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basecode.Test", "Basecode.Test\Basecode.Test.csproj", "{4288D294-390E-4C61-9888-70C1E2F74C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C06265AD-1179-4945-85CF-28AADA137AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C06265AD-1179-4945-85CF-28AADA137AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C06265AD-1179-4945-85CF-28AADA137AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4288D294-390E-4C61-9888-70C1E2F74C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4288D294-390E-4C61-9888-70C1E2F74C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4288D294-390E-4C61-9888-70C1E2F74C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4288D294-390E-4C61-9888-70C1E2F74C9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,6 +9,9 @@ namespace Basecode.Services.Interfaces{
     public interface IJobOpeningService{
         List<JobOpening> RetrieveAll();
         void Add(JobOpening jobOpening);
+        void Delete(int id);
+        void Update(JobOpening jobOpening);
+        JobOpening GetByID(int id);
         LogContent CheckValidTitle(JobOpeningViewModel jobOpeningViewModel);
     }
 }
